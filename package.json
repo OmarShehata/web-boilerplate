@@ -9,5 +9,8 @@
   },
   "devDependencies": {
     "snowpack": "^3.5.2"
+  },
+  "dependencies": {
+    "phaser": "3.55.2"
   }
 }
