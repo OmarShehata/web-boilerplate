@@ -17,17 +17,17 @@ class Loading extends Phaser.Scene {
     }
 
     preload() {
-        let directory = 'assets/sprites/';
+        const directory = 'assets/sprites/';
         this.load.atlas('player', directory + 'player.png', directory + 'player.json');
         this.load.image('ground', directory + 'ground_snow.png');
         this.load.image('ground_small', directory + 'ground_snow_small.png');
 
-        // let audio_name = 'assets/audio/hikari_audio_sprite';
-        // this.load.audioSprite('audio', audio_name + '.json', 
-        //     [ audio_name + '.ogg', 
-        //       audio_name + '.m4a',
-        //       audio_name + '.mp3',
-        //       audio_name + '.ac3' ]);
+        const audio_name = 'assets/audio/audio_sprite';
+        this.load.audioSprite('audio', audio_name + '.json', 
+            [ audio_name + '.ogg', 
+              audio_name + '.m4a',
+              audio_name + '.mp3',
+              audio_name + '.ac3' ]);
 
 
     	var loadingText = this.createText();

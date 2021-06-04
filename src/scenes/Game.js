@@ -102,6 +102,12 @@ class Game extends Phaser.Scene {
         // Make camera follow player 
         // See: https://photonstorm.github.io/phaser3-docs/Phaser.Cameras.Scene2D.Camera.html#startFollow__anchor
         this.cameras.main.startFollow(this.player, false, 0.5, 0.5, 0, 100);
+
+        // Play background music
+        // See: https://photonstorm.github.io/phaser3-docs/Phaser.Types.Sound.html#.SoundConfig
+        this.sound.playAudioSprite('audio', '879176_Pizza-Cat', {
+            loop: true
+        });
     }
 
     update () {
@@ -132,6 +138,7 @@ class Game extends Phaser.Scene {
         if ((this._currentAnim() == 'idle' || this._currentAnim() == 'walk')
             && this._jumpPressed()){
             this._setPlayAnim('jump');
+            this.sound.playAudioSprite('audio', 'jump_01');
             player.body.setVelocityY(-2000);
             this._playerOnGround = false;
         }

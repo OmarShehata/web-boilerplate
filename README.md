@@ -4,6 +4,8 @@ Set up for making games in Phaser. Inspired by [Hikari's Station](https://github
 
 Art from [Kenney platformer](https://www.kenney.nl/assets/platformer-characters) and [jumper pack](https://www.kenney.nl/assets/jumper-pack).
 
+Music from [Newgrounds, WaxTerK](https://www.newgrounds.com/audio/listen/879176) and [OpenGameArt library of sounds](https://opengameart.org/content/library-of-game-sounds).
+
 This little demo shows:
 
 * Basic game setup
@@ -13,7 +15,4 @@ This little demo shows:
 * Basic collision 
 * Move player with keyboard
 * Move camera around
-
-Remaining work:
-
 * Load and play audio

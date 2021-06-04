@@ -5,9 +5,11 @@
   "license": "MIT",
   "scripts": {
     "start": "snowpack dev",
-    "build": "snowpack build"
+    "build": "snowpack build",
+    "compile-audio": "audiosprite raw_audio/* --output assets/audio/audio_sprite"
   },
   "devDependencies": {
+    "audiosprite": "^0.7.2",
     "snowpack": "^3.5.2"
   },
   "dependencies": {
