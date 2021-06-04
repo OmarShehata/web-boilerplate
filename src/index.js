@@ -7,10 +7,15 @@ var game = new Phaser.Game({
     parent: 'game', // The ID of the div in index.html
     width: 1120,
     height: 630,
+    scale: {
+        mode: Phaser.Scale.ScaleModes.FIT ,
+        autoCenter: Phaser.Scale.CENTER_BOTH
+    },
     physics: {
         default: 'arcade',
         arcade: {
-            debug: true
+            gravity: { y: 7000 },
+            debug: false
         }
     },
     scene: [Loading, Game]
