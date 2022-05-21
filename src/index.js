@@ -1,21 +1,40 @@
-import HelperClass from "./HelperClass.js";
-import helperFunction from "./helperFunction.js";
-import { anotherFunction } from "./helperFunction.js";
-import imageUrl from '../static/test.jpeg?url';
-// To load a raw text file, use ?raw instead of ?url
+import * as THREE from 'three';
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 
-const helper = new HelperClass();
-helper.sayHello();
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 
-helperFunction();
+const renderer = new THREE.WebGLRenderer();
+renderer.setSize( window.innerWidth, window.innerHeight );
+document.body.appendChild( renderer.domElement );
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.update();
 
-anotherFunction();
+function render() {
+  requestAnimationFrame( render );
+  renderer.render( scene, camera );
+};
 
-// Example loading static file from JS
-async function fetchImage() {
-  const request = await fetch(imageUrl);
-  const response = await request.blob();
-  console.log(response);
+render();
+
+
+const directionalLight = new THREE.DirectionalLight( 0xffffff, 0.5 );
+scene.add( directionalLight );
+const light = new THREE.AmbientLight( 0x404040 ); // soft white light
+scene.add( light );
+const geometry = new THREE.BoxGeometry();
+const material = new THREE.MeshStandardMaterial( { color: 0x00ff00 } );
+const cube = new THREE.Mesh( geometry, material );
+scene.add( cube );
+camera.position.z = 5;
+
+
+
+function resizeCanvas() {
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+
+  renderer.setSize( window.innerWidth, window.innerHeight );
 }
-
-fetchImage();
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
