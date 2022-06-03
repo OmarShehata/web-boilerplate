@@ -14,13 +14,14 @@ class Game extends Phaser.Scene {
     // Create ground
     const { width, height } = game.sys.canvas;
 
-    const ground = this.add.sprite(width / 2, height - 100, "ground");
+    const ground = this.add.sprite(width / 2, height - 100, "atlas", "ground_snow");
     this.physics.add.existing(ground, true);
 
     const ground2 = this.add.sprite(
       width / 2 + 400,
       height - 300,
-      "ground_small"
+      "atlas",
+      "ground_snow_small"
     );
     this.physics.add.existing(ground2, true);
 

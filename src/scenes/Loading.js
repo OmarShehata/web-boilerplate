@@ -20,11 +20,10 @@ class Loading extends Phaser.Scene {
     const directory = "assets/sprites/";
     this.load.atlas(
       "player",
-      directory + "player.png",
-      directory + "player.json"
+      "assets/sprites/player.png",
+      "assets/sprites/player.json"
     );
-    this.load.image("ground", directory + "ground_snow.png");
-    this.load.image("ground_small", directory + "ground_snow_small.png");
+    this.load.multiatlas('atlas', 'assets/sprites/atlas.json', 'assets/sprites');
 
     const audio_name = "assets/audio/audio_sprite";
     this.load.audioSprite("audio", audio_name + ".json", [

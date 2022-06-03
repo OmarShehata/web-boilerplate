@@ -1,0 +1,62 @@
+{
+	"textures": [
+		{
+			"image": "atlas-0.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 591,
+				"h": 106
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "ground_snow_small",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 201,
+						"h": 100
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 201,
+						"h": 100
+					},
+					"frame": {
+						"x": 3,
+						"y": 3,
+						"w": 201,
+						"h": 100
+					}
+				},
+				{
+					"filename": "ground_snow",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 380,
+						"h": 94
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 380,
+						"h": 94
+					},
+					"frame": {
+						"x": 208,
+						"y": 3,
+						"w": 380,
+						"h": 94
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:0d4975ad62bf35d58a9dd63dab1dc899:ac7ba2eb387552f32fdb368dc415111d:cf935fe037ea9b5d3744d532996e235e$"
+	}
+}
