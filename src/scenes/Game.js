@@ -10,6 +10,7 @@ class Game extends Phaser.Scene {
   create() {
     this.keys = new Keyboard(this);
     this.createPlayer();
+    this.physics.world.drawDebug = false;
 
     // Create ground
     const { width, height } = game.sys.canvas;
@@ -122,6 +123,15 @@ class Game extends Phaser.Scene {
 
   update() {
     const player = this.player;
+
+    // Debug draw
+    if (this.keys.justPressed("Q")) {
+      this.physics.world.drawDebug = !this.physics.world.drawDebug; 
+      if (this.physics.world.drawDebug == false) {
+          this.physics.world.debugGraphic.clear();
+      }
+    }
+    
 
     // If anim is idle, and pressing left/right, set to walk
     if (
