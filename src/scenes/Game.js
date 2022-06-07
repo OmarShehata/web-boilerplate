@@ -1,5 +1,6 @@
 import "phaser";
 import Keyboard from "../Keyboard.js";
+import AudioManager from "../AudioManager.js";
 
 class Game extends Phaser.Scene {
   constructor(config) {
@@ -8,6 +9,8 @@ class Game extends Phaser.Scene {
   }
 
   create() {
+    AudioManager.setGameScene(this);
+
     this.keys = new Keyboard(this);
     this.createPlayer();
     this.physics.world.drawDebug = false;
@@ -15,7 +18,12 @@ class Game extends Phaser.Scene {
     // Create ground
     const { width, height } = game.sys.canvas;
 
-    const ground = this.add.sprite(width / 2, height - 100, "atlas", "ground_snow");
+    const ground = this.add.sprite(
+      width / 2,
+      height - 100,
+      "atlas",
+      "ground_snow"
+    );
     this.physics.add.existing(ground, true);
 
     const ground2 = this.add.sprite(
@@ -43,10 +51,8 @@ class Game extends Phaser.Scene {
     this.cameras.main.startFollow(this.player, false, 0.5, 0.5, 0, 100);
 
     // Play background music
-    // See: https://photonstorm.github.io/phaser3-docs/Phaser.Types.Sound.html#.SoundConfig
-    // this.sound.playAudioSprite('audio', '879176_Pizza-Cat', {
-    //     loop: true
-    // });
+    this.mainLoop = AudioManager.create('879176_Pizza-Cat');
+    this.mainLoop.fadeIn(1000);
   }
 
   createPlayer() {
@@ -126,17 +132,16 @@ class Game extends Phaser.Scene {
 
     // Debug draw
     if (this.keys.justPressed("Q")) {
-      this.physics.world.drawDebug = !this.physics.world.drawDebug; 
+      this.physics.world.drawDebug = !this.physics.world.drawDebug;
       if (this.physics.world.drawDebug == false) {
-          this.physics.world.debugGraphic.clear();
+        this.physics.world.debugGraphic.clear();
       }
     }
-    
 
     // If anim is idle, and pressing left/right, set to walk
     if (
       this._currentAnim() == "idle" &&
-      (this.keys.right() || this.keys.right())
+      (this.keys.left() || this.keys.right())
     ) {
       this._setPlayAnim("walk");
     }
@@ -166,7 +171,7 @@ class Game extends Phaser.Scene {
       this.keys.upJustPressed()
     ) {
       this._setPlayAnim("jump");
-      this.sound.playAudioSprite("audio", "jump_01");
+      AudioManager.playOnce("jump_01")
       player.body.setVelocityY(-2000);
       this._playerOnGround = false;
     }
@@ -175,7 +180,7 @@ class Game extends Phaser.Scene {
       this._setPlayAnim("idle");
     }
 
-    if (this.keys.justPressed('R')) {
+    if (this.keys.justPressed("R")) {
       player.reset();
     }
   }
