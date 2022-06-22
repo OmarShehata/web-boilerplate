@@ -16,3 +16,10 @@ This little demo shows:
 - Move player with keyboard
 - Move camera around
 - Load and play audio
+
+### Local setup
+
+* Clone this repo
+* Switch to branch `game`
+* Install dependencies `npm install`
+* Run it with `npm run dev`
