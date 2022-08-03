@@ -48,7 +48,7 @@ class Game extends Phaser.Scene {
 
     // Make camera follow player
     // See: https://photonstorm.github.io/phaser3-docs/Phaser.Cameras.Scene2D.Camera.html#startFollow__anchor
-    this.cameras.main.startFollow(this.player, false, 0.5, 0.5, 0, 100);
+    this.cameras.main.startFollow(this.player, false, 1, 1, 0, 100);
 
     // Play background music
     this.mainLoop = AudioManager.create('879176_Pizza-Cat');
