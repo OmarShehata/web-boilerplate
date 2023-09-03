@@ -1,0 +1,121 @@
+/* 
+https://github.com/OmarShehata/lda-explorable/blob/master/style.css 
+*/
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+.centered-text {
+  text-align: center;
+}
+
+/* unvisited link */
+a:link {
+    color: #B2506A;
+}
+
+/* visited link */
+a:visited {
+    color: #662E3C;
+}
+
+/* mouse over link */
+a:hover {
+    color: #E56788;
+}
+
+/* selected link */
+a:active {
+    color: #E56788;
+} 
+
+@media (min-width: 768px){
+  .article {
+    max-width: 640px;
+    margin-left: auto;
+    margin-right:auto;
+  }
+}
+
+
+hr {
+  border:none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  margin-top: 60px;
+  margin-bottom: 60px;
+  width: 200px;
+}
+
+
+blockquote {
+  margin: 0.25em 0;
+  padding: 0.25em 40px;
+  font-size: 20px;
+  line-height: 1.45;
+  position: relative;
+  color: #B2506A;
+}
+
+blockquote:before {
+  font-family: Georgia, serif;
+  display: block;
+  content: "\201C";
+  font-size: 80px;
+  color: #B2506A;
+  position: absolute;
+  left: -20px;
+  top: -20px;
+}
+
+cite {
+  float:right;
+  color: #999999;
+  font-size: 16px;
+  display: block;
+  margin-top: 5px;
+  font-style: normal;
+}
+ 
+blockquote cite:before {
+  content: "\2014 \2009";
+}
+
+.article {
+  padding:30px;
+}
+
+.article h1 {
+  font-size:30px;
+  font-weight: 100;
+}
+.article h2 {
+  font-weight: 700;
+}
+
+
+@media (min-width: 768px){
+  .article {
+    max-width: 640px;
+    margin-left: auto;
+    margin-right:auto;
+  }
+}
+
+@media (min-width: 768px){
+  .article h1 {
+    font-size:48px;
+  }
+}
+
+.article p {
+  font-size:20px;
+  line-height: 31px;
+  color:rgba(0, 0, 0, 0.8);
+}
+
+.subtitle {
+  color:#B2506A!important;
+}
+.subtitle a {
+  text-decoration: none;
+}

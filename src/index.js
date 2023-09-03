@@ -1,22 +1,16 @@
-import HelperClass from "./HelperClass.js";
-import helperFunction from "./helperFunction.js";
-import { anotherFunction } from "./helperFunction.js";
-// import imageUrl from '../public/test.jpeg?url';
-// To load a raw text file, use ?raw instead of ?url
+const canvas = document.querySelector("#canvas")
+const ctx = canvas.getContext("2d");
+canvas.width = 700
+canvas.height = 300
 
-const helper = new HelperClass();
-helper.sayHello();
+const center = { x: canvas.width / 2, y: canvas.height / 2 };
+const radius = 70;
+ctx.beginPath()
+ctx.arc(center.x - 200, center.y, radius, 0, 2 * Math.PI, false)
+ctx.fillStyle = "#ff9900"
+ctx.fill()
 
-helperFunction();
-
-anotherFunction();
-
-// Example loading static file from JS
-async function fetchImage() {
-  const imageUrl = '/test.jpeg'
-  const request = await fetch(imageUrl);
-  const response = await request.blob();
-  console.log(response);
-}
-
-fetchImage();
+ctx.beginPath()
+ctx.arc(center.x, center.y, radius, 0, 2 * Math.PI, false)
+ctx.fillStyle = "#ff9900"
+ctx.fill()
