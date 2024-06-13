@@ -1,0 +1,47 @@
+<script type="module" src="/components/SampleComponent.js"></script> 
+
+<link rel="stylesheet" type="text/css" href="/styles/index.css">
+
+<a id="about-btn" href="/about">About</a>
+
+<div class="content">
+    
+  <div id="title-container">
+    <h1 id="title">
+      Backend template
+    </h1>
+    <h4 id="subtitle">
+      a cool project!
+    </h4>
+  </div>
+
+<p>
+  This is a template. Current average: <span id="avg">{{average}}</span>
+</p>
+
+
+
+<div class="three-dots">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+  <h1>
+    Submit data
+  </h1>
+
+  <p id="log"></p>
+  <sample-component log-element-id="log"></sample-component>
+
+</div>
+
+<script>
+  // poll regularly to update the average
+  async function makeRequest() {
+    const response = await fetch('/average');
+    const data = await response.json();
+    document.querySelector("#avg").innerText = data.average
+  }
+  setInterval(makeRequest, 1000)
+</script>

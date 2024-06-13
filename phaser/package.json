@@ -1,0 +1,21 @@
+{
+  "name": "web-boilerplate",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "format": "prettier --write .",
+    "build": "vite build",
+    "preview": "vite preview",
+    "compile-audio": "audiosprite raw_audio/* --output assets/audio/audio_sprite"
+  },
+  "devDependencies": {
+    "audiosprite": "^0.7.2",
+    "prettier": "^2.6.2",
+    "vite": "^2.7.2"
+  },
+  "dependencies": {
+    "phaser": "3.55.2"
+  }
+}

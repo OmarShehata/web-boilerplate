@@ -1,0 +1,22 @@
+#new-button {
+	font-family: HK Grotesk;
+    padding: 0.75rem 1rem;
+    font-size: 1.1rem;
+    line-height: 1rem;
+    font-weight: 500;
+    height: 2.75rem;
+    align-items: center;
+    cursor: pointer;
+    background: #f8c700;
+    border: 3px solid #f8c700;
+    box-sizing: border-box;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #000;
+    white-space: nowrap;
+    margin-left: auto;
+}
+
+#new-button:hover {
+	background-color: #ffea92;
+}

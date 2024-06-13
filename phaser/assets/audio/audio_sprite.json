@@ -1,0 +1,70 @@
+{
+  "resources": [
+    "assets/audio/audio_sprite.ogg",
+    "assets/audio/audio_sprite.m4a",
+    "assets/audio/audio_sprite.mp3",
+    "assets/audio/audio_sprite.ac3"
+  ],
+  "spritemap": {
+    "879176_Pizza-Cat": {
+      "start": 0,
+      "end": 128.05224489795918,
+      "loop": false
+    },
+    "jump_01": {
+      "start": 130,
+      "end": 130.18031746031747,
+      "loop": false
+    },
+    "jump_02": {
+      "start": 132,
+      "end": 132.15145124716554,
+      "loop": false
+    },
+    "jump_03": {
+      "start": 134,
+      "end": 134.1537641723356,
+      "loop": false
+    },
+    "jump_04": {
+      "start": 136,
+      "end": 136.53619047619048,
+      "loop": false
+    },
+    "jump_05": {
+      "start": 138,
+      "end": 138.61773242630386,
+      "loop": false
+    },
+    "jump_06": {
+      "start": 140,
+      "end": 140.42712018140588,
+      "loop": false
+    },
+    "jump_07": {
+      "start": 142,
+      "end": 142.2702267573696,
+      "loop": false
+    },
+    "jump_08": {
+      "start": 144,
+      "end": 144.32414965986393,
+      "loop": false
+    },
+    "jump_09": {
+      "start": 146,
+      "end": 146.2243537414966,
+      "loop": false
+    },
+    "jump_10": {
+      "start": 148,
+      "end": 148.3692290249433,
+      "loop": false
+    },
+    "jump_11": {
+      "start": 150,
+      "end": 150.33600907029478,
+      "loop": false
+    }
+  }
+}
